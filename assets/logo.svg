@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Madad logo">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F5B700"/>
+      <stop offset="100%" stop-color="#D08C00"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="url(#g)"/>
+  <!-- Stylised hand: 4 finger strokes + thumb -->
+  <g fill="none" stroke="#0B0F1A" stroke-width="4.5" stroke-linecap="round">
+    <path d="M20 44 V22"/>
+    <path d="M28 44 V16"/>
+    <path d="M36 44 V18"/>
+    <path d="M44 44 V24"/>
+    <path d="M18 40 C14 36, 14 30, 20 28"/>
+  </g>
+  <rect x="16" y="42" width="32" height="10" rx="5" fill="#0B0F1A"/>
+</svg>

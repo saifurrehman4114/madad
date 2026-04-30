@@ -1,0 +1,56 @@
+# One-command local demo stack.
+#
+#   docker compose up --build
+#
+# Starts:
+#   - ollama   : serves the fine-tuned Gemma 4 GGUF on :11434
+#   - backend  : FastAPI on :8000 pointed at the ollama container
+#   - frontend : Vite dev server on :5173 proxying /api to the backend
+#
+# The ollama volume persists pulled/created models between runs.
+
+services:
+  ollama:
+    image: ollama/ollama:latest
+    container_name: madad-ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+      - ./training/outputs:/models:ro
+    healthcheck:
+      test: ["CMD", "ollama", "list"]
+      interval: 10s
+      timeout: 5s
+      retries: 6
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: madad-backend
+    depends_on:
+      ollama:
+        condition: service_healthy
+    environment:
+      MADAD_BACKEND: ollama
+      OLLAMA_HOST: http://ollama:11434
+      OLLAMA_MODEL: ${OLLAMA_MODEL:-madad-gemma4:latest}
+      MADAD_CORS_ORIGINS: http://localhost:5173
+    ports:
+      - "8000:8000"
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: madad-frontend
+    depends_on:
+      - backend
+    environment:
+      VITE_API_BASE: http://localhost:8000
+    ports:
+      - "5173:5173"
+
+volumes:
+  ollama_data:

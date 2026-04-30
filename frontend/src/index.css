@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&family=Inter:wght@400;500;600;700&display=swap");
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+.urdu {
+  font-family: "Noto Nastaliq Urdu", serif;
+  font-size: 1.75rem;
+  line-height: 2.5;
+  direction: rtl;
+  text-align: right;
+}

@@ -1,0 +1,29 @@
+# Ollama Modelfile for the fine-tuned Madad-Gemma-4 adapter.
+#
+# Usage:
+#   ollama create madad-gemma4 -f training/Modelfile
+#
+# Expects training/outputs/madad-gemma4.Q4_K_M.gguf to exist (produced by the
+# Unsloth notebook). The SYSTEM block below is the default for chat-mode calls
+# — the FastAPI backend overrides it per request with the task-specific prompt.
+
+FROM ./outputs/madad-gemma4.Q4_K_M.gguf
+
+PARAMETER temperature 0.2
+PARAMETER top_p 0.9
+PARAMETER num_ctx 8192
+PARAMETER stop "<end_of_turn>"
+
+SYSTEM """
+You are Madad, an offline Pakistan Sign Language interpreter.
+Always return strict JSON matching the schema the user gives you.
+Never invent signs that are not in the provided vocabulary.
+Prefer short, natural Urdu and English over literal word-by-word glosses.
+"""
+
+TEMPLATE """{{ if .System }}<start_of_turn>system
+{{ .System }}<end_of_turn>
+{{ end }}{{ range .Messages }}<start_of_turn>{{ .Role }}
+{{ .Content }}<end_of_turn>
+{{ end }}<start_of_turn>model
+"""
