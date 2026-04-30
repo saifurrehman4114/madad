@@ -11,7 +11,7 @@
   "dataset_sources": [],
   "competition_sources": ["gemma-4-good-hackathon"],
   "kernel_sources": [],
-  "model_sources": [
-    "google/gemma-4/transformers/gemma-4-e4b-it/1"
-  ]
+  "model_sources": [],
+  "docker_image": "gcr.io/kaggle-private-byod/python@sha256:00377cd1b3d470a605bc5b0ceca79969e369644e9b36802242a1c70e627372f9",
+  "machine_shape": "NvidiaTeslaT4"
 }
