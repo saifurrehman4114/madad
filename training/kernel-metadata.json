@@ -1,6 +1,6 @@
 {
-  "id": "saifurrehman4114/madad-psl-interpreter",
-  "title": "Madad (مدد) — Offline Pakistan Sign Language Interpreter",
+  "id": "saifurrehman4114ucp/madad-psl-interpreter",
+  "title": "Madad PSL Interpreter",
   "code_file": "kaggle_submission_notebook.ipynb",
   "language": "python",
   "kernel_type": "notebook",
