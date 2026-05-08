@@ -3,9 +3,9 @@
 **Team:** Saif Ur Rehman (solo) · Lahore, Pakistan
 **Submission track:** Impact → Digital Equity & Inclusivity · Special Tech → Unsloth · Special Tech → LiteRT · Main Track
 **Licence:** Apache 2.0 (code + weights) · CC-BY 4.0 (this writeup + media)
-**Repo:** https://github.com/saifrh/madad
-**Demo:** https://madad.vercel.app *(web mirror)*
-**Android APK:** https://github.com/saifrh/madad/releases/latest
+**Repo:** https://github.com/saifurrehman4114/madad
+**Notebook:** https://www.kaggle.com/code/saifurrehman4114ucp/madad-psl-interpreter
+**Android APK:** https://github.com/saifurrehman4114/madad/releases/latest
 
 ---
 
