@@ -1,0 +1,62 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Node / frontend
+node_modules/
+dist/
+.vite/
+*.log
+.eslintcache
+
+# Android
+mobile/litert_android/.gradle/
+mobile/litert_android/build/
+mobile/litert_android/app/build/
+mobile/litert_android/local.properties
+mobile/litert_android/.idea/
+*.apk
+*.aab
+*.keystore
+
+# Model artefacts — tracked via LFS or released separately
+*.gguf
+*.tflite
+*.task
+*.safetensors
+*.bin
+*.onnx
+training/outputs/
+training/wandb/
+
+# Datasets — never commit raw video
+data/raw/
+data/interim/
+data/psl100/videos/
+*.mp4
+*.mov
+*.webm
+!docs/**/*.mp4
+!assets/**/*.mp4
+
+# Editor / OS
+.DS_Store
+.vscode/
+.idea/
+*.swp
+
+# Secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Jupyter
+.ipynb_checkpoints/
